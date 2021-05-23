@@ -1,0 +1,65 @@
+.tab-content{
+    margin-top: 50px
+}
+#main-icon{
+  display: inline-block
+}
+#title-main-text{
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 5px
+}
+#title-sub-text{
+  padding: 5px;
+  border-radius: 5px;
+  color: red;
+  font-size: 12px;
+  display: inline-block;
+}
+.dataTables_wrapper .dataTables_length, 
+.dataTables_wrapper .dataTables_filter, 
+.dataTables_wrapper .dataTables_info, 
+.dataTables_wrapper .dataTables_processing, 
+.dataTables_wrapper .dataTables_paginate, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: #ffffff;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+  box-sizing:border-box;
+  display:inline-block;
+  min-width:1.5em;
+  padding:0.5em 1em;margin-left:2px;
+  text-align:center;
+  text-decoration:none !important;
+  cursor:pointer;
+  *cursor:hand;
+  color:#ffffff !important;
+  border:1px solid transparent;
+  border-radius:2px
+}
+thead {
+  color: #ffffff;
+}
+tbody {
+  color: #ffffff;
+}
+.dt-button{
+  background-image: none !important;
+  background-color: #343e48 !important;
+  color: white !important
+}
+#map_view{
+  height: 80vh !important;
+  background-color: #2d3741;
+}
+.loader-img{
+  height: 31px !important;
+  width: 31px !important;
+}
+#about-content h2, h4{
+  text-align: center;
+}
+#social-media-buttons{
+  text-align: center;
+}
