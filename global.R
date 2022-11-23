@@ -10,7 +10,7 @@ library(sf)
 library(dplyr)
 library(tidyr)
 library(stringr)
-library(DT) 
+library(DT)
 library(leaflet)
 library(plotly)
 
@@ -52,7 +52,7 @@ merged_data$Recovered[is.na(merged_data$Recovered)] <- 0
 merged_data$active <- merged_data$Confirmed - merged_data$Deaths - merged_data$Recovered
 
 # aggregating data by Country and Date
-merged_data <- merged_data %>% 
+merged_data <- merged_data %>%
   group_by(`Country/Region`, Date) %>%
   summarise(Confirmed = sum(Confirmed), Deaths = sum(Deaths), Recovered = sum(Recovered), Active = sum(active))
 
@@ -65,6 +65,8 @@ index <- which(is.na(merged_data$New_cases))
 merged_data$New_cases[index] <- merged_data$Confirmed[index]
 merged_data$New_deaths[index] <- merged_data$Deaths[index]
 merged_data$New_recovered[index] <- merged_data$Recovered[index]
+
+total_recovered <- merged_data %>% group_by(`Country/Region`) %>% filter(Recovered == max(Recovered)) %>% select(`Country/Region`, Recovered) %>% distinct() %>% ungroup() %>% summarise(total_recovered = sum(Recovered))
 
 # Modifying country names so they all match up
 merged_data[merged_data$`Country/Region`=="Korea, South",1] <- "South Korea"
